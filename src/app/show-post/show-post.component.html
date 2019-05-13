@@ -1,3 +1,29 @@
-<p>
-  show-post works!
-</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8" >
+      <mat-card class="example-card mb-3" *ngIf="posts">
+        <mat-card-header>
+          <mat-card-title>{{  posts.id}}) {{ posts.title }} </mat-card-title>
+          <mat-card-subtitle>by Dog Breed on {{ posts.created_at}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{ posts.body }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="d-flex justify-content-end">
+          <button mat-raised-button  color="primary">Edit</button>
+          <button (click)="DeletePost()"  mat-raised-button color="accent">Delete</button>
+        </mat-card-actions>
+        <hr>
+        <mat-card-footer>
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <textarea class="shadow-none"  matInput placeholder="Leave a comment"></textarea>
+            </mat-form-field>
+          </form>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>

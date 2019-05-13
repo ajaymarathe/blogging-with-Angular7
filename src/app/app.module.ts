@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 //Angular Material Components
 import {MatCheckboxModule} from '@angular/material';
@@ -34,11 +36,13 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { ShowPostComponent } from './show-post/show-post.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -46,10 +50,14 @@ import { ShowPostComponent } from './show-post/show-post.component';
     PostComponent,
     CreatePostComponent,
     EditPostComponent,
-    ShowPostComponent
+    ShowPostComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
+    AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatCheckboxModule,
