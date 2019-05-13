@@ -3,6 +3,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
+import { FormsModule } from '@angular/forms';
 
 //Angular Material Components
 import {MatCheckboxModule} from '@angular/material';
@@ -59,6 +61,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatCheckboxModule,
     MatCheckboxModule,
     MatButtonModule,
@@ -89,7 +92,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    AngularMarkdownEditorModule.forRoot({ iconlibrary: 'fa' })
   ],
   providers: [],
   bootstrap: [AppComponent]

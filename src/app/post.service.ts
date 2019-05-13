@@ -14,11 +14,23 @@ export class PostService {
     return this.http.get(this.url+'posts');
   }
 
+  StorePosts(postData){
+    return this.http.post(this.url+'posts',{
+      title: postData[0],
+      category_id: postData[1],
+      body: postData[2]
+    });
+  }
+
   ShowPost(slug){
     return this.http.get(this.url+'posts/'+slug);
   }
 
   DeletePost(slug){
     return this.http.delete(this.url+'posts/'+slug);
+  }
+
+  Catgories(){
+    return this.http.get(this.url+'category');
   }
 }

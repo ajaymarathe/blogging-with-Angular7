@@ -21,8 +21,8 @@ export class PostComponent implements OnInit {
     this.postservice.Posts()
     .subscribe(
       (response: Response) => {
-        this.responseData = response;
-        this.posts = Object.keys(this.responseData.data).map((keys) => this.responseData.data[keys])
+        // this.responseData = response;
+        this.posts = Object.keys(response).map((keys) => response[keys])
         console.log(response);
       },
       (error) => console.log(error)

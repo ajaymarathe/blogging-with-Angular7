@@ -37,9 +37,9 @@ export class ShowPostComponent implements OnInit {
     .subscribe(
       (response: Response) =>{
         console.log('this is response',response);
-        this.GobackToPosts();
       }
-    );
+      );
+      this.GobackToPosts();
   }
 
   GobackToPosts(){
