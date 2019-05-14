@@ -22,6 +22,7 @@ export class PostService {
     });
   }
 
+  // get post by slug
   ShowPost(slug){
     return this.http.get(this.url+'posts/'+slug);
   }

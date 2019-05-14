@@ -37,8 +37,11 @@ export class CreatePostComponent implements OnInit {
     this.postservice.StorePosts(postData)
     .subscribe(
       (response: Response) => {
-        // this.router.navigate([''])
         console.log(response);
+      },
+      (error) => {
+        this.router.navigate(['']);
+        console.log(error);
       }
     )
   }

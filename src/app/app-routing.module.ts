@@ -8,7 +8,7 @@ import { ShowPostComponent } from './show-post/show-post.component';
 const routes: Routes = [
   { path: '', component: PostComponent },
   { path: 'create', component: CreatePostComponent},
-  { path: 'edit', component: EditPostComponent},
+  { path: 'edit/:id', component: EditPostComponent},
   { path: 'show/:id', component: ShowPostComponent}
 ];
 

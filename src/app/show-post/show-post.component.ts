@@ -33,16 +33,15 @@ export class ShowPostComponent implements OnInit {
 
   DeletePost(){
     const slug = this.route.snapshot.params.id;
-    this.postservice.DeletePost(slug) 
+    this.postservice.DeletePost(slug)
     .subscribe(
-      (response: Response) =>{
-        console.log('this is response',response);
+      (response: Response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+        this.router.navigate(['']);
       }
-      );
-      this.GobackToPosts();
-  }
-
-  GobackToPosts(){
-    this.router.navigate([''])
+    );
   }
 }
