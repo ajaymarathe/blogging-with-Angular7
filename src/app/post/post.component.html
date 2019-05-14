@@ -3,13 +3,10 @@
     <div class="col-md-8">
       <div *ngIf="posts">
         <mat-card class="example-card mb-3" *ngFor="let post of posts">
-          <mat-card-header>
-            <mat-card-title>{{post.id}}) {{ post.title }} </mat-card-title>
-            <mat-card-subtitle>by Dog Breed on {{ post.created_at}}</mat-card-subtitle>
-          </mat-card-header>
+          <mat-card-title> <h1>{{ post.title }}</h1>  </mat-card-title>
+          <mat-card-subtitle>by Dog Breed on {{ post.created_at}}</mat-card-subtitle>
           <mat-card-content>
-            <p>
-              {{ post.body}}
+            <p [innerHtml]="post.body">
             </p>
             <button [routerLink]="['/show',post.slug]" routerLinkActive="router-link-active"  mat-raised-button color="primary">Read More</button>
           </mat-card-content>
@@ -18,28 +15,6 @@
             <button mat-button>SHARE</button>
           </mat-card-actions>
         </mat-card>
-        <!-- pagination -->
-        <!-- <div>
-          <nav aria-label="...">
-            <ul class="pagination">
-              <li class="page-item disabled">
-                <span class="page-link">Previous</span>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">{{responseData.from}}</a></li>
-              <li class="page-item active" aria-current="page">
-                <span class="page-link">
-                  {{responseData.current_page}}
-                  <span class="sr-only">(current)</span>
-                </span>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">{{responseData.to}}</a></li>
-              <li class="page-item">
-                <a class="page-link" [routerLink]="responseData.last_page_url" routerLinkActive="router-link-active"  >Next</a>
-              </li>
-            </ul>
-          </nav>
-        </div> -->
-        <!-- ends pagination -->
       </div>
     </div>
   </div>

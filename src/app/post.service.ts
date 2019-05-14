@@ -17,8 +17,20 @@ export class PostService {
   StorePosts(postData){
     return this.http.post(this.url+'posts',{
       title: postData[0],
-      category_id: postData[1],
+      category: postData[1],
       body: postData[2]
+    });
+  }
+
+  // update posts
+  UpdatePost(editPostData,slug){
+    // console.log('first',editPostData);
+    // console.log(slug);
+    return this.http.patch(this.url+'posts/'+slug,{
+      title: editPostData[0].title,
+      slug: editPostData[0].title,
+      category: editPostData[0].slug,
+      body: editPostData[0].body
     });
   }
 

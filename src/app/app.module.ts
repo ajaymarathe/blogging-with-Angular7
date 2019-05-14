@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 import { FormsModule } from '@angular/forms';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 //Angular Material Components
 import {MatCheckboxModule} from '@angular/material';
@@ -93,7 +94,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    AngularMarkdownEditorModule.forRoot({ iconlibrary: 'fa' })
+    AngularMarkdownEditorModule.forRoot({ iconlibrary: 'fa' }),
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
