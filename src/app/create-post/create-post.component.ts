@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Router } from '@angular/router';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-create-post',
@@ -9,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class CreatePostComponent implements OnInit {
 
+  public Editor = ClassicEditor;
+
   constructor(private postservice: PostService, private router: Router) { }
+
   title;
   category;
   body;

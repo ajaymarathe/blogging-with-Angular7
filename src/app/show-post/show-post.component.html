@@ -2,10 +2,8 @@
   <div class="row">
     <div class="col-md-8" >
       <mat-card class="example-card mb-3" *ngIf="posts">
-        <mat-card-header>
-          <mat-card-title>{{  posts.id}}) {{ posts.title }} </mat-card-title>
-          <mat-card-subtitle>by Dog Breed on {{ posts.created_at}}</mat-card-subtitle>
-        </mat-card-header>
+        <mat-card-title> <h1>{{posts.id }} {{ posts.title }}</h1>  </mat-card-title>
+        <mat-card-subtitle>by Dog Breed on {{ posts.created_at}}</mat-card-subtitle>
         <mat-card-content>
           <p [innerHtml]="posts.body">
           </p>
@@ -15,11 +13,27 @@
           <button (click)="DeletePost()"  mat-raised-button color="accent">Delete</button>
         </mat-card-actions>
         <hr>
-        <mat-card-footer>
-          <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <textarea class="shadow-none"  matInput placeholder="Leave a comment"></textarea>
+        <mat-card-footer class="m-2">
+          <form (ngSubmit)="PostComment()" class="example-form" >
+          <div class="media" *ngFor="let comment of comments">
+            <img class="mr-3" src="favicon.ico" alt="Generic placeholder image">
+            <div class="media-body">
+              <h6 class="mt-0">User name</h6>
+              <div class="d-flex justify-content-between align-items-end">
+                  <p class="border-bottom" >{{ comment.body}} </p>
+                  <a mat-raised-button  color="primary" (click)="DeleteComment(comment.id)"  class="mb-3 pr-5">
+                      Delete
+                  </a>
+              </div>
+            </div>
+          </div>          
+          <div class="d-flex justify-content-between align-items-center">
+            <mat-form-field class="example-full-width ">
+              <textarea [(ngModel)]="comment" name="comment" class="shadow-none"  matInput placeholder="Leave a comment"></textarea>
             </mat-form-field>
+            <input type="hidden" [value]="posts.id" >
+            <button mat-raised-button color="primary" style="height: 36px !important;">Submit</button>
+          </div>
           </form>
         </mat-card-footer>
       </mat-card>
