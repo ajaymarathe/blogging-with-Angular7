@@ -46,6 +46,9 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { ShowPostComponent } from './show-post/show-post.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CreateCategoryComponent } from './create-category/create-category.component';
+import { ShowCategoriesComponent } from './show-categories/show-categories.component';
+import { CatgoriesComponent } from './catgories/catgories.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     CreatePostComponent,
     EditPostComponent,
     ShowPostComponent,
-    NavbarComponent
+    NavbarComponent,
+    CreateCategoryComponent,
+    ShowCategoriesComponent,
+    CatgoriesComponent
   ],
   imports: [
     BrowserModule,

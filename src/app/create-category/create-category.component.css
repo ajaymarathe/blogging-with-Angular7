@@ -1,0 +1,9 @@
+.shadow-none{
+    box-shadow: 0;
+}
+*{
+    font-family: poppins;
+}
+.mat-form-field{
+    width: 100%;
+}
