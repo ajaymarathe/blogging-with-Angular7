@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <form (ngSubmit)="UpdateCategory()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="category">
+          <input class="shadow-none" name="category" [(ngModel)]="category.category" matInput placeholder="Category Name..">
+        </mat-form-field>
+        <button mat-raised-button color="primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

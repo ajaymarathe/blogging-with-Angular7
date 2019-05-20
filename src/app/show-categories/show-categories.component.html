@@ -1,12 +1,6 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-8">
-      <!-- <ul *ngFor="let cat of category">
-        <li> {{cat.category}} <a >Delete</a></li>
-      </ul> -->
-
-      <hr>
-
       <table class="table table-striped">
         <thead>
           <tr>
@@ -20,8 +14,8 @@
           <tr  *ngFor="let cat of category">
             <th scope="row">1</th>
             <td><a [routerLink]="['/category',cat.id]" routerLinkActive="router-link-active" >{{ cat.category }}</a></td>
-            <td><button (click)="EditCategory()" mat-raised-button color="accent">Edit</button></td>
-            <td> <button (click)="DeleteCategory()" mat-raised-button color="primary">Delete</button></td>
+            <td><button [routerLink]="['/editCategory',cat.id]" routerLinkActive="router-link-active"  mat-raised-button color="accent">Edit</button></td>
+            <td> <button (click)="CategoryDelete(cat.id)" mat-raised-button color="primary">Delete</button></td>
           </tr>
         </tbody>
       </table>

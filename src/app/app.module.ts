@@ -49,6 +49,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CreateCategoryComponent } from './create-category/create-category.component';
 import { ShowCategoriesComponent } from './show-categories/show-categories.component';
 import { CatgoriesComponent } from './catgories/catgories.component';
+import { EditCategoriesComponent } from './edit-categories/edit-categories.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { CatgoriesComponent } from './catgories/catgories.component';
     NavbarComponent,
     CreateCategoryComponent,
     ShowCategoriesComponent,
-    CatgoriesComponent
+    CatgoriesComponent,
+    EditCategoriesComponent
   ],
   imports: [
     BrowserModule,

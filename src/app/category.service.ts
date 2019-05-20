@@ -23,4 +23,17 @@ export class CategoryService {
   GetSingleCategory(id){
     return this.http.get('http://localhost:8000/api/category/'+id);
   }
+
+  UpdateCategory(updatedData){
+    console.log(updatedData);
+    return this.http.patch('http://localhost:8000/api/category/'+updatedData[1],{
+      user_id: 1,
+      category: updatedData[0]
+    });
+  }
+
+  DeleteCategory(id){
+    console.log(id);
+    return this.http.delete('http://localhost:8000/api/category/'+id);
+  }
 }

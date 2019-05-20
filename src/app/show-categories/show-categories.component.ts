@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../category.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-show-categories',
@@ -8,7 +9,7 @@ import { CategoryService } from '../category.service';
 })
 export class ShowCategoriesComponent implements OnInit {
 
-  constructor(private categoryservice: CategoryService) { }
+  constructor(private categoryservice: CategoryService, private route: ActivatedRoute, private router: Router) { }
 
   category;
 
@@ -30,8 +31,19 @@ export class ShowCategoriesComponent implements OnInit {
     console.log("edit cateogry");
   }
 
-  DeleteCategory(){
-    console.log("delete category");
+  
+  CategoryDelete(id: any){
+    console.log('category delete id', id);
+    this.categoryservice.DeleteCategory(id)
+    .subscribe(
+      (response: Response) =>{
+        console.log("this is res",response);
+      },
+      (error) =>{ 
+        console.log("this is err",error);
+        this.router.navigate(['']);
+      }
+    );
   }
 
 }
