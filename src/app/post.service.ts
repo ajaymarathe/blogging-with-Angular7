@@ -28,7 +28,7 @@ export class PostService {
     // console.log(slug);
     return this.http.patch(this.url+'posts/'+slug,{
       title: editPostData[0].title,
-      slug: editPostData[0].title,
+      slug: editPostData[0].title, 
       category: editPostData[0].slug,
       body: editPostData[0].body
     });

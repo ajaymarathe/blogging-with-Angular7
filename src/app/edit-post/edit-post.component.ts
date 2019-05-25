@@ -23,8 +23,7 @@ export class EditPostComponent implements OnInit {
   EditPost(){
     const slug = this.route.snapshot.params.id;
     console.log(slug);
-    const editPostData =[this.editPost];
-    console.log(editPostData[0].body);
+    const editPostData =[this.editPost];  
 
     this.postservice.UpdatePost(editPostData,slug)
     .subscribe(

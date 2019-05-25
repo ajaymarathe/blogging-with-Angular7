@@ -50,6 +50,7 @@ import { CreateCategoryComponent } from './create-category/create-category.compo
 import { ShowCategoriesComponent } from './show-categories/show-categories.component';
 import { CatgoriesComponent } from './catgories/catgories.component';
 import { EditCategoriesComponent } from './edit-categories/edit-categories.component';
+import { ImgUploadComponent } from './img-upload/img-upload.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { EditCategoriesComponent } from './edit-categories/edit-categories.compo
     CreateCategoryComponent,
     ShowCategoriesComponent,
     CatgoriesComponent,
-    EditCategoriesComponent
+    EditCategoriesComponent,
+    ImgUploadComponent
   ],
   imports: [
     BrowserModule,
